@@ -25,7 +25,7 @@ Domain Controller certificates must be issued with a set of specific extensions 
             Client Authentication (1.3.6.1.5.5.7.3.2)
             Server Authentication (1.3.6.1.5.5.7.3.1)
 
-- The certificate **Subject Alternative Name** extension must contain the Domain Name System (DNS) qualifier and fully qualified Domain controller name.  For example:
+- The certificate **Subject Alternative Name** extension must contain the Domain Name System (DNS) qualifier and fully qualified Domain Controller name. For example:
 
             DNS Name=controller1.intranet.agency.gov
 
@@ -34,11 +34,11 @@ Domain Controller certificates must be issued with a set of specific extensions 
   * To determine the Domain Controller's GUID, start **Ldp.exe** and locate the **domain-naming context**. 
   * Double-click on the **name of the Domain Controller** whose GUID you want to view.
   
-    > The list of attributes for the Domain Controller object contains the **"Object GUID"** followed by a long number. The number is the object GUID. For example:
+    > The list of attributes for the Domain Controller object contains the **"Object GUID" followed by a long number**. The number is the object GUID. For example:
 
             Other Name: 1.3.6.1.4.1.311.25.1 = ac 4b 29 06 bb d6 5d 4f e3 9c 4c ab c3 6a 55 d9
 
-    > The Domain Controller's certificate must be installed in the domain controller's local computer's **_personal certificate store_**, as described in _How do I generate and install Domain Controller certificates_?
+    > The Domain Controller's certificate must be installed in the Domain Controller's local computer's **_personal certificate store_**, as described in _Auto-Enroll Domain Controllers Using Group Policy Object (GPO)_. <!--Is this the correct section to link to? Title has apparently changed...?-->
 
 ## Issuing Domain Controller Certificates
 
