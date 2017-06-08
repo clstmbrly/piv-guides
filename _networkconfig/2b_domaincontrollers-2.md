@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Local Certification Authority
+title: Installing a Local Certification Authority
 collection: networkconfig
 permalink: networkconfig/2b_domaincontrollers/
 ---
