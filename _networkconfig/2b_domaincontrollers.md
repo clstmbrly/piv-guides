@@ -29,8 +29,8 @@ replace the clicks etc with simple ->
   2. Open the **Server Manager**.
   3. Click on **Manage**, and then click on **Add Roles and Features**.
   4. Proceed through the **Add Roles and Features Wizard** options. Choose the following:
-     1. Server Roles: **_Active Directory Certificate Services_**
-     2. AD CS Roles Services: **_Certification Authority_** 
+     * Server Roles: **_Active Directory Certificate Services_**
+     * AD CS Roles Services: **_Certification Authority_** 
   5. On the **Results** page, click on **Configure Active Directory Certificate Services on the destination server**.
   6. Proceed through the **AD CS Configuration** options. Choose the following, as necessary:
      1. Role Service: **_Certification Authority_** 
