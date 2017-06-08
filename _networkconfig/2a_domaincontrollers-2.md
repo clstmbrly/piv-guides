@@ -38,7 +38,7 @@ Domain Controller certificates must be issued with a set of specific extensions 
 
             Other Name: 1.3.6.1.4.1.311.25.1 = ac 4b 29 06 bb d6 5d 4f e3 9c 4c ab c3 6a 55 d9
 
-    > The Domain Controller's certificate must be installed in the Domain Controller's local computer's **_personal certificate store_**, as described in [account linking]({{site.baseurl}}/identifiers) _Auto-Enroll Domain Controllers Using Group Policy Object (GPO)_. <!--Is this the correct section to link to? Title has apparently changed...?-->
+    > The Domain Controller's certificate must be installed in the Domain Controller's local computer's **_personal certificate store_**, as described in [Auto-Enroll Domain Controllers Using Group Policy Object]({{site.baseurl}}/identifiers). <!--Is this the correct section to link to? Title has apparently changed...?-->
 
 ## Issuing Domain Controller Certificates <!--Jordan directed that this section should be added back in here.-->
 
