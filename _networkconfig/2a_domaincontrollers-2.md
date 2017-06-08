@@ -5,9 +5,8 @@ collection: networkconfig
 permalink: networkconfig/2a_domaincontrollers/
 ---
 
-[Creating Domain Controller Certificate Profiles](#creating-domain-controller-certificate-profiles)
-
-[Issuing Domain Controller Certificates](#issuing-domain-controller-certificates)
+* [Creating Domain Controller Certificate Profiles](#creating-domain-controller-certificate-profiles)
+* [Issuing Domain Controller Certificates](#issuing-domain-controller-certificates)
 
 To use smartcards and PIV credentials for network authentication, all Domain Controllers must have Domain Controller authentication certificates. To generate and install a Domain Controller authentication certificate, you will need to create a certificate profile.
 
