@@ -8,7 +8,7 @@ permalink: networkconfig/2a_domaincontrollers/
 * [Creating Domain Controller Certificate Profiles](#creating-domain-controller-certificate-profiles)
 * [Issuing Domain Controller Certificates](#issuing-domain-controller-certificates)
 
-To use smartcards and PIV credentials for network authentication, all Domain Controllers must have Domain Controller authentication certificates. To generate and install a Domain Controller authentication certificate, you will need to create a certificate profile.
+To use smartcards and PIV credentials for network authentication, all Domain Controllers must have Domain Controller authentication certificates. To generate and install a Domain Controller authentication certificate, you need to create a certificate profile.
 
 {% include alert-info.html heading = "Devices authenticate too!" content="When your users are using certificates to authenticate to the network, the Domain Controllers are also authenticating as devices that use certificates. This system works together to create secure connections. To learn more, click on the links below or search for online resources that discuss Public Key Cryptography for Initial Authentication (PKINIT) protocols." %}
 
