@@ -44,7 +44,7 @@ replace the clicks etc with simple ->
      7. Validity Period: **_6 years_** 
      8. Certificate Database: **_&lt;your preference&gt;_** 
 
-## Configure Certificate template for Domain Controller
+## Configure Certificate Template for Domain Controller
 
   1. Log into the CA server as a member of the **Enterprise Administrators** group.
   2. Open the certificate template's **MMC snap-in** (i.e., **certtmpl.msc**). 
@@ -63,7 +63,7 @@ replace the clicks etc with simple ->
  10. In the **console tree**, right-click on **Certificate Templates** and click on **New**. Then, click on **Certificate Template To Issue**.
  11. Select and enable the **_certificate template_** that was created, and then click on **OK**
 
-## Auto-enroll Domain Controllers using Group Policy Object (GPO)**
+## Auto-Enroll Domain Controllers Using Group Policy Object (GPO)**
 
   1. Log into a **Domain Controller server** as a member of the **Enterprise Administrators** group.
   2. Open the **GPMC** (i.e. **gpmc.msc** ).
