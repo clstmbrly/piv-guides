@@ -1,15 +1,18 @@
 ---
 layout: default
-title: Create Domain Controller Certificate Profiles
+title: Creating Domain Controller Certificate Profiles
 collection: networkconfig
 permalink: networkconfig/2a_domaincontrollers/
 ---
+
+[Creating Domain Controller Certificate Profiles](#creating-domain-controller-certificate-profiles)
+[Issuing Domain Controller Certificates](#issue-domain-controller-certificates)
 
 To use smartcards and PIV credentials for network authentication, all Domain Controllers must have Domain Controller authentication certificates. To generate and install a Domain Controller authentication certificate, you will need to create a certificate profile.
 
 {% include alert-info.html heading = "Devices authenticate too!" content="When your users are using certificates to authenticate to the network, the Domain Controllers are also authenticating as devices that use certificates. This system works together to create secure connections. To learn more, click on the links below or search for online resources that discuss Public Key Cryptography for Initial Authentication (PKINIT) protocols." %}
 
-## Domain controller certificate profiles
+## Domain Controller Certificate Profiles
 
 Domain Controller certificates must be issued with a set of specific extensions and values.  The certificate profile for each Domain Controller must meet the following requirements:
 
@@ -31,13 +34,13 @@ Domain Controller certificates must be issued with a set of specific extensions 
   * To determine the Domain Controller's GUID, start **Ldp.exe** and locate the **domain-naming context**. 
   * Double-click on the **name of the Domain Controller** whose GUID you want to view.
   
-    > The list of attributes for the Domain Controller object contains **"Object GUID" followed by a long number**. The number is the object GUID. For example:
+    > The list of attributes for the Domain Controller object contains the **"Object GUID"** followed by a long number. The number is the object GUID. For example:
 
             Other Name: 1.3.6.1.4.1.311.25.1 = ac 4b 29 06 bb d6 5d 4f e3 9c 4c ab c3 6a 55 d9
 
     > The Domain Controller's certificate must be installed in the domain controller's local computer's **_personal certificate store_**, as described in _How do I generate and install Domain Controller certificates_?
 
-## Issuing Domain Controller Certificates *ADDED BACK IN - JP*
+## Issuing Domain Controller Certificates
 
 US Federal Civilian agencies have a variety of policies on whether you should use a Domain Controller certificate issued from your agency's local enterprise Certificate Authority, or whether the certificate must be issued from a Certificate Authority managed and certified under the Federal Public Key Infrastructure (FPKI).  Providing a common guide and recommendation is challenging as each agency's information security policy should be followed.
 
