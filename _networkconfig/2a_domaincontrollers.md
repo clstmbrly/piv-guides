@@ -37,7 +37,7 @@ Domain Controller certificates must be issued with a set of specific extensions 
 
     > The Domain Controller's certificate must be installed in the domain controller's local computer's **_personal certificate store_**, as described in _How do I generate and install Domain Controller certificates_?
 
-## Issuing Domain Controller Certificates ADDED BACK IN - JP
+## Issuing Domain Controller Certificates *ADDED BACK IN - JP*
 
 US Federal Civilian agencies have a variety of policies on whether you should use a Domain Controller certificate issued from your agency's local enterprise Certificate Authority, or whether the certificate must be issued from a Certificate Authority managed and certified under the Federal Public Key Infrastructure (FPKI).  Providing a common guide and recommendation is challenging as each agency's information security policy should be followed.
 
