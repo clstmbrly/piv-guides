@@ -29,22 +29,25 @@ replace the clicks etc with simple ->
 
   1. Log into the **CA server** as a member of the **Enterprise Administrators** group.
   2. Open the **Server Manager**.
-  3. Click on **Manage** -> **Add Roles and Features**.
+  3. Click on **Manage &gt; Add Roles and Features**.
   4. Proceed through the **Add Roles and Features Wizard** options. Choose the following:
-     * Server Roles: **_Active Directory Certificate Services_**
-     * AD CS Roles Services: **_Certification Authority_** 
+  
+     _Server Roles:_ **_Active Directory Certificate Services_**
+     _AD CS Roles Services:_ **_Certification Authority_**
+     
   5. On the **Results** page, click on **Configure Active Directory Certificate Services on the destination server**.
   6. Proceed through the **AD CS Configuration** options. Choose the following, as necessary:
-     1. Role Service: **_Certification Authority_** 
-     2. Setup Type: **_Enterprise CA_** 
-     3. CA Type: **_Root CA_**
-     4. Private Key: **_Create a new private key_** 
-     5. Cryptography: **_RSA#Microsoft Software Key Storage Provider, 2048 bit, SHA-256 6e_**
-     6. CA Name: Use the recommended naming convention:
-        **dc=[_AD suffix_], dc=[_AD domain_], cn=[_certification authority name_]** 
-        (e.g., dc=_gov_, dc=_[AgencyName]_, cn=_[AgencyName]_ _NPE_ _CA1_) 
-     7. Validity Period: **_6 years_** 
-     8. Certificate Database: **_&lt;your preference&gt;_** 
+  
+     _Role Service:_ **_Certification Authority_** 
+     _Setup Type:_ **_Enterprise CA_** 
+     _CA Type:_ **_Root CA_**
+     _Private Key:_ **_Create a new private key_** 
+     _Cryptography:_ **_RSA#Microsoft Software Key Storage Provider, 2048 bit, SHA-256 6e_**
+     _CA Name: Use the recommended naming convention:_
+     > **dc=[_AD suffix_], dc=[_AD domain_], cn=[_certification authority name_]** 
+     > (e.g., dc=_gov_, dc=_[AgencyName]_, cn=_[AgencyName]_ _NPE_ _CA1_) 
+     _Validity Period:_ **_6 years_** 
+     _Certificate Database:_ **_&lt;your preference&gt;_** 
 
 ## Configure Certificate Template for Domain Controller
 
@@ -53,9 +56,11 @@ replace the clicks etc with simple ->
   3. Right-click on the **Domain Controller Authentication** template, and then click on **Duplicate Template**.
   4. Under the **Compatibility** tab, modify the **Compatibility Settings** for both the _CA_ and _certificate recipients_ to the highest version compatibility as possible (e.g., **Windows Server 2012 R2** or **Windows 2008 R2**).
   5. Under the **General** tab, we recommend the following settings:
-     1. Template Name:  rename to:  **_&lt;Your organization&gt; - Domain Controller Authentication_**.
-     2. Validity Period:  **_3 years_**.
-     3. Renewal Period:  **_6 weeks_**.
+  
+     _Template Name:_  **_&lt;Your organization&gt; - Domain Controller Authentication_**.
+     _Validity Period:_  **_3 years_**.
+     _Renewal Period:_  **_6 weeks_**.
+     
   6. Under the **Cryptography** tab, set the following values:
      1. Minimum Key Size:  **_2048_**.
      2. Request Hash:  **_SHA256_** (if possible).
