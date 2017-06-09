@@ -7,7 +7,7 @@ permalink: networkconfig/2b_domaincontrollers-2/
 
 This guide will help you to install a local Certification Authority (CA) so that your organization's users with PIVs/CACs will be able to log into domain-connected devices. 
 
-Additional, useful information about installing a local CA is given in <!--Not sure if this is the correct link/reference...?>[_Issuing Domain Controller Certificates_]({{site.baseurl}}/creating-domain-controller-certificate-profiles). 
+<!--Not sure if this is the correct link/reference...?>Additional, useful information about installing a local CA is given in [_Issuing Domain Controller Certificates_]({{site.baseurl}}/creating-domain-controller-certificate-profiles). 
 
 {% include alert-info.html content="These procedures are accurate for using Microsoft 2012 Server, Standard Edition, for CA and Domain Controller servers (as of March 2017)" %}  
 
