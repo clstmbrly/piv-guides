@@ -7,27 +7,29 @@ permalink: networkconfig/2b_domaincontrollers/
 
 This guide will help you to install your own local Certification Authority (CA)
 
-For example, let's say that your organization wanted to use a local-enterprise Microsoft CA to issue a Domain Controller certificate to the Domain Controller server. A certificate would need to be installed on the server with the correct information (i.e., populated fields/values) before the organization's users with PIVs/CACs could log into domain-connected devices. (Additional, useful information about installing a local CA is given in [_Issuing Domain Controller Certificates_]({{site.baseurl}}/creating-domain-controller-certificate-profiles).)
+Perhaps your organization wants to use a local-enterprise Microsoft CA (for example) to issue a Domain Controller certificate to the Domain Controller server. The certificate would need to contain valid information (i.e., correct field values) to be installed on the server. By following these installation steps and using valid information, your organization's users with PIVs/CACs will be able to log into domain-connected devices. (Additional, useful information about installing a local CA is given in [_Issuing Domain Controller Certificates_]({{site.baseurl}}/creating-domain-controller-certificate-profiles).)
 
 {% include alert-info.html content="These procedures are accurate for using Microsoft 2012 Server, Standard Edition, for CA and Domain Controller servers (as of March 2017" %}
 
-LIST OUT all sub-sections and links here
+* [Prerequisites](#prerequisites)
+* [Install CA Role](#install-ca-role)
+* [Configure Certificate Template for Domain Controller](#configure-certificate-template-for-domain-controller)
+* [Auto-Enroll Domain Controllers Using Group Policy Object (GPO)](#auto-enroll-domain-controllers-using-group-policy-object)
 
-
-### Prerequisites
+## Prerequisites
 
   * The server that hosts the CA must be joined to the domain
-  * The CA should never reside on the same server(s) that are acting as Domain Controller(s)
+  * The CA should never reside on the same server(s) that is acting as a Domain Controller(s)
   * You must be an Enterprise Administrator in the domain to perform these steps
 
-## Install CA role
+## Install CA Role
 
 replace the clicks etc with simple ->
 
 
   1. Log into the **CA server** as a member of the **Enterprise Administrators** group.
   2. Open the **Server Manager**.
-  3. Click on **Manage**, and then click on **Add Roles and Features**.
+  3. Click on **Manage** -> **Add Roles and Features**.
   4. Proceed through the **Add Roles and Features Wizard** options. Choose the following:
      * Server Roles: **_Active Directory Certificate Services_**
      * AD CS Roles Services: **_Certification Authority_** 
@@ -63,7 +65,7 @@ replace the clicks etc with simple ->
  10. In the **console tree**, right-click on **Certificate Templates** and click on **New**. Then, click on **Certificate Template To Issue**.
  11. Select and enable the **_certificate template_** that was created, and then click on **OK**
 
-## Auto-Enroll Domain Controllers Using Group Policy Object (GPO)**
+## Auto-Enroll Domain Controllers Using Group Policy Object (GPO)
 
   1. Log into a **Domain Controller server** as a member of the **Enterprise Administrators** group.
   2. Open the **GPMC** (i.e. **gpmc.msc** ).
