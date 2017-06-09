@@ -5,8 +5,9 @@ collection: networkconfig
 permalink: networkconfig/2b_domaincontrollers/
 ---
 
-This guide will help you to install your own Local Certification Authority.
-For example, if your organization wanted to use a local enterprise Microsoft CA to issue a Domain Controller certificate to the Domain Controller server and the server needed to have a certificate installed with the appropriate fields/values as a prerequisite to enabling authorized users with PIV credentials (i.e., PIV cards) to log into domain-connected devices. [_Issuing Domain Controller Certificates_]({{site.baseurl}}/creating-domain-controller-certificate-profiles) section provides additional, useful information.
+This guide will help you to install your own local Certification Authority (CA)
+
+For example, let's say that your organization wanted to use a local-enterprise Microsoft CA to issue a Domain Controller certificate to the Domain Controller server. A certificate would need to be installed on the server with the correct information (i.e., populated fields/values) before the organization's users with PIVs/CACs could log into domain-connected devices. (Additional, useful information about installing a local CA is given in [_Issuing Domain Controller Certificates_]({{site.baseurl}}/creating-domain-controller-certificate-profiles).)
 
 {% include alert-info.html content="These procedures are accurate for using Microsoft 2012 Server, Standard Edition, for CA and Domain Controller servers (as of March 2017" %}
 
