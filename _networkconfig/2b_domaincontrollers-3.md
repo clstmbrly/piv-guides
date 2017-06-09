@@ -24,7 +24,7 @@ Additional, useful information about installing a local CA is given in [_Issuing
 
 ## Install CA Role
 
-To use a local-enterprise Microsoft CA (for example) to issue a Domain Controller certificate (i.e., CA role) to a Domain Controller server, it is essential that the certificate contain valid information. These steps provide recommended field values.
+To use a local-enterprise Microsoft CA (for example) to issue a Domain Controller certificate (i.e., CA role) to a Domain Controller server, it is essential that the certificate contain valid information. These steps provide the recommended field values.
 
   1. Log into the **CA server** as a member of the **Enterprise Administrators** group.
   2. Open the **Server Manager** and click on **Manage -&gt; Add Roles and Features**.
@@ -69,9 +69,9 @@ To use a local-enterprise Microsoft CA (for example) to issue a Domain Controlle
   3. Within the appropriate **GPO**, navigate to **Computer Configuration\Policies\Windows Settings\Security Settings\Public Key Policies**\ 
   4. Configure **Certificate Services Client – Auto-Enrollment** with the following options:
      _Configuration Model:_ **_Enabled_**.
-      For _Renew Expired Certificates, Update Pending Certificates, Remove Revoked Certificates_: **_Check_all checkboxes_**.
-      Update _Certificates That Use Certificate Templates_: **_Check the checkbox_**.
+     _Renew Expired Certificates, Update Pending Certificates, Remove Revoked Certificates_: **_Check_all checkboxes_**.
+      _Update Certificates That Use Certificate Templates_: **_Check the checkbox_**.
   5. At the command line, you can now force the group policy to update. Use the command: **_gpupdate /force_** or wait for the group policy to update on its own.
   6. Open **MMC.exe -&gt; File -&gt; Add/Remove Snap-in -&gt; Certificates -&gt; Computer account -&gt; Local computer**. 
   
-     If successful, you will see a new Domain Controller certificate in the **_Certificate (Local Computer) -&gt; Personal -&gt; Certificates folder_**. At the **Certificate Template** tab, you should also see a certificate generated with the custom certificate template.
+      If successful, you will see a new Domain Controller certificate in the **_Certificate (Local Computer) -&gt; Personal -&gt; Certificates folder_**. At the **Certificate Template** tab, you should also see a certificate generated with the custom certificate template.
