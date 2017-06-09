@@ -24,9 +24,6 @@ Perhaps your organization wants to use a local-enterprise Microsoft CA (for exam
 
 ## Install CA Role
 
-replace the clicks etc with simple ->
-
-
   1. Log into the **CA server** as a member of the **Enterprise Administrators** group.
   2. Open the **Server Manager**.
   3. Click on **Manage &gt; Add Roles and Features**.
@@ -34,7 +31,7 @@ replace the clicks etc with simple ->
      _Server Roles:_ **_Active Directory Certificate Services_**
      _AD CS Roles Services:_ **_Certification Authority_** 
   5. On the **Results** page, click on **Configure Active Directory Certificate Services on the destination server**.
-  6. Proceed through the **AD CS Configuration** options. Choose the following, as necessary:
+  6. Proceed through the **AD CS Configuration** options. Choose the following values, as required:
      _Role Service:_ **_Certification Authority_** 
      _Setup Type:_ **_Enterprise CA_** 
      _CA Type:_ **_Root CA_**
