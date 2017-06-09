@@ -5,11 +5,11 @@ collection: networkconfig
 permalink: networkconfig/2b_domaincontrollers-2/
 ---
 
-This guide will help you to install your own local Certification Authority (CA)
+This guide will help you to install a local Certification Authority (CA) so that your organization's users with PIVs/CACs will be able to log into domain-connected devices. 
 
-Perhaps your organization wants to use a local-enterprise Microsoft CA (for example) to issue a Domain Controller certificate to the Domain Controller server. The certificate would need to contain valid information (i.e., correct field values) to be installed on the server. By following these installation steps and using valid information, your organization's users with PIVs/CACs will be able to log into domain-connected devices. (For additional information about installing a local CA, see [_Issuing Domain Controller Certificates_]({{site.baseurl}}/creating-domain-controller-certificate-profiles).)
+Additional, useful information about installing a local CA is given in [_Issuing Domain Controller Certificates_]({{site.baseurl}}/creating-domain-controller-certificate-profiles).<!--Not sure if this is the correct link/reference...?>
 
-{% include alert-info.html content="These procedures are accurate for using Microsoft 2012 Server, Standard Edition, for CA and Domain Controller servers (as of March 2017)" %} 
+{% include alert-info.html content="These procedures are accurate for using Microsoft 2012 Server, Standard Edition, for CA and Domain Controller servers (as of March 2017)" %} \\
 
 * [Prerequisites](#prerequisites)
 * [Install CA Role](#install-ca-role)
@@ -18,11 +18,13 @@ Perhaps your organization wants to use a local-enterprise Microsoft CA (for exam
 
 ## Prerequisites
 
-  * The server that hosts the CA must be joined to the domain
-  * The CA should never reside on the same server(s) that is acting as a Domain Controller(s)
-  * You must be an Enterprise Administrator in the domain to perform these steps
+  * The server that hosts the CA must be joined to the domain.
+  * The CA should never reside on the same server(s) that is acting as a Domain Controller(s).
+  * You must be an Enterprise Administrator in the domain to perform these steps.
 
 ## Install CA Role
+
+To use a local-enterprise Microsoft CA (for example) to issue a Domain Controller certificate (i.e., CA role) to a Domain Controller server, it is essential that the certificate contain valid information. These steps provide recommended field values.
 
   1. Log into the **CA server** as a member of the **Enterprise Administrators** group.
   2. Open the **Server Manager**.
