@@ -2,7 +2,7 @@
 layout: default
 title: Installing a Local Certification Authority
 collection: networkconfig
-permalink: networkconfig/2b_domaincontrollers-2/
+permalink: networkconfig/2b_domaincontrollers-3/
 ---
 
 This guide will help you to install a local Certification Authority (CA) so that your organization's users with PIVs/CACs will be able to log into domain-connected devices. 
