@@ -32,21 +32,19 @@ replace the clicks etc with simple ->
   3. Click on **Manage &gt; Add Roles and Features**.
   4. Proceed through the **Add Roles and Features Wizard** options. Choose the following:
     * _Server Roles:_ **_Active Directory Certificate Services_**
-    * _AD CS Roles Services:_ **_Certification Authority_**
-     
+    * _AD CS Roles Services:_ **_Certification Authority_** 
   5. On the **Results** page, click on **Configure Active Directory Certificate Services on the destination server**.
   6. Proceed through the **AD CS Configuration** options. Choose the following, as necessary:
-  
-     _Role Service:_ **_Certification Authority_** 
-     _Setup Type:_ **_Enterprise CA_** 
-     _CA Type:_ **_Root CA_**
-     _Private Key:_ **_Create a new private key_** 
-     _Cryptography:_ **_RSA#Microsoft Software Key Storage Provider, 2048 bit, SHA-256 6e_**
-     _CA Name: Use the recommended naming convention:_
+    * _Role Service:_ **_Certification Authority_** 
+    * _Setup Type:_ **_Enterprise CA_** 
+    * _CA Type:_ **_Root CA_**
+    * _Private Key:_ **_Create a new private key_** 
+    * _Cryptography:_ **_RSA#Microsoft Software Key Storage Provider, 2048 bit, SHA-256 6e_**
+    * _CA Name: Use the recommended naming convention:_
      > **dc=[_AD suffix_], dc=[_AD domain_], cn=[_certification authority name_]** 
      > (e.g., dc=_gov_, dc=_[AgencyName]_, cn=_[AgencyName]_ _NPE_ _CA1_) 
-     _Validity Period:_ **_6 years_** 
-     _Certificate Database:_ **_&lt;your preference&gt;_** 
+    * _Validity Period:_ **_6 years_** 
+    * _Certificate Database:_ **_&lt;your preference&gt;_** 
 
 ## Configure Certificate Template for Domain Controller
 
