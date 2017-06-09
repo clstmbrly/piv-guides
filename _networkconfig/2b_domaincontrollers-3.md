@@ -5,7 +5,7 @@ collection: networkconfig
 permalink: networkconfig/2b_domaincontrollers-3/
 ---
 
-This guide will help you to install a local Certification Authority (CA) so that your organization's users with PIVs/CACs will be able to log into domain-connected devices. 
+This guide will help you to install a local Certification Authority (CA) so that users with PIVs/CACs will be able to log into your organization's domain-connected devices. 
 
 Additional, useful information about installing a local CA is given in [_Issuing Domain Controller Certificates_]({{site.baseurl}}/creating-domain-controller-certificate-profiles). 
 
@@ -28,7 +28,7 @@ To use a local-enterprise Microsoft CA (for example) to issue a Domain Controlle
 
   1. Log into the **CA server** as a member of the **Enterprise Administrators** group.
   2. Open the **Server Manager**.
-  3. Click on **Manage &gt; Add Roles and Features**.
+  3. Click on **Manage -&gt; Add Roles and Features**.
   4. Proceed through the **Add Roles and Features Wizard** options. Choose the following:
      _Server Roles:_ **_Active Directory Certificate Services_**
      _AD CS Roles Services:_ **_Certification Authority_** 
@@ -44,7 +44,7 @@ To use a local-enterprise Microsoft CA (for example) to issue a Domain Controlle
      _Validity Period:_ **_6 years_** 
      _Certificate Database:_ **_&lt;your preference&gt;_** 
 
-## Configure Certificate Template for Domain Controller
+## Configure Certificate Template for Domain Controller  
 
   1. Log into the CA server as a member of the **Enterprise Administrators** group.
   2. Open the certificate template's **MMC snap-in** (i.e., **certtmpl.msc**). 
@@ -69,7 +69,7 @@ To use a local-enterprise Microsoft CA (for example) to issue a Domain Controlle
   2. Open the **GPMC** (i.e. **gpmc.msc** ).
   3. Within the appropriate **GPO**, navigate to **Computer Configuration\Policies\Windows Settings\Security Settings\Public Key Policies**\ 
   4. Configure **Certificate Services Client – Auto-Enrollment** with the following options:
-     _ Configuration Model:_ **_Enabled_**.
+     _Configuration Model:_ **_Enabled_**.
       For _Renew Expired Certificates, Update Pending Certificates, Remove Revoked Certificates_: **_Check_all checkboxes_**.
       Update _Certificates That Use Certificate Templates_: **_Check the checkbox_**.
   5. At the command line, you can now force the group policy to update. Use the command: **_gpupdate /force_** or wait for the group policy to update on its own.
