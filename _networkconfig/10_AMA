@@ -41,3 +41,5 @@ with the following
 • [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\kdc]
  • "ChainWithIssuancePolicyOIDs"=dword:00000001
     ```
+
+
