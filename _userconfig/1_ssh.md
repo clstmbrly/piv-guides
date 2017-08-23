@@ -6,30 +6,19 @@ collection: userconfig
 ---
 
 User often needs to access remote UNIX-like server through network. The risk is weak login method could be impersonated and traffic could be sniffed. PIV can provide strong authentication and hard to inpersonante; ssl can prevent network data sniffing. PIV with SSH can provide both of abov strong security measures. Public key provided in PIV is authorized in form  of certificate signed by authroized CA certificate.
-To use Secure Shell (SSH) for remote access to a UNIX-like server, you need to first authenticate your PIV. PIV authentication and SSH can be done from a Windows, Linux, or Mac-based computer. You also need to configure the UNIX-like server that you want to remotely access.
+
+To use Secure Shell (SSH) for remote access to a UNIX-like server, you need to first authenticate your PIV. PIV authentication and SSH can be done from Windows, Linux, or MacOS. You will also need to configure the UNIX-like server that you want to remotely access.<!--Is the UNIX-like server statement correct?-->
 
 Select the link for your operating system (OS). Please also review _Configure a UNIX-like Server_.
 
-  * [Use PIV for SSH from a Windows Computer](#use-piv-for-ssh-from-a-windows-computer)
-  * [Use PIV for SSH from a Linux Computer](#use-piv-for-ssh-from-a-linux-computer)
-  * [Use PIV for SSH from a Mac Computer](#use-piv-for-ssh-from-a-mac-computer)
+  * [Use PIV for SSH from Windows](#use-piv-for-ssh-from-windows)
+  * [Use PIV for SSH from Linux](#use-piv-for-ssh-from-linux)
+  * [Use PIV for SSH from macOS](#use-piv-for-ssh-from-macOS)
   * [Configure a UNIX-like Server](#configure-a-unix-like-server)
   
 {% include alert-info.html heading = "Your PIV contains an authentication key pair and public certificate. Using a PIV key pair and public certificate is exactly like using a key pair and self-signed certificate for SSH remote access." %}
 
-## Use PIV for SSH from a Windows Computer
-
-### Hardware and software requirements
-
-  * A PIV
-  * Windows computer
-  * A smartcard reader
-  * PuTTY-CAC application (an open-source SSH client that supports PIV authentication)
-  * Pageant application (an SSH authentication agent used with PuTTY-CAC)
-
-     > _You will download **PuTTY-CAC** and **Pageant** in the steps below._
-
-### Procedures
+## Use PIV for SSH from Windows
 
 These steps will help you to:
 
@@ -37,7 +26,23 @@ These steps will help you to:
   * Ensure that your Windows computer and SSH server recognize your PIV.
   * Enable the correct drivers on your computer for SSH.
 
-#### Install PuTTY-CAC
+* [Hardware and software requirements](#hardware-and-software-requirements)
+* [Install PuTTY-CAC](#install-putty-cac)
+* [Use PIV to insert Microsoft CAPI key into Pageant](#use-piv-to-insert-microsoft-capi-key-into-pageant)
+* [Configure PuTTY](#configure-putty)
+* [Verify PuTTY login and proceed with SSH](#verify-putty-login-and-proceed-with-ssh)
+
+### Hardware and software requirements
+
+* A PIV
+* Windows computer
+* A smartcard reader
+* PuTTY-CAC application (an open-source SSH client that supports PIV authentication)
+* Pageant application (an SSH authentication agent used with PuTTY-CAC)
+
+> _You will download **PuTTY-CAC** and **Pageant** in the steps below._
+
+### Install PuTTY-CAC
 
   1. Download and install [**PuTTY-CAC**](https://www.github.com/NoMoreFood/putty-cac/releases){:target="_blank"}_. 
   
@@ -46,7 +51,7 @@ These steps will help you to:
      
   2. Open PuTTY and click on **About** (lower left-hand corner of the **PuTTY Configuration** window) to ensure that the correct version was installed.
 
-#### Use PIV to insert Microsoft CAPI key into Pageant
+### Use PIV to insert Microsoft CAPI key into Pageant
  
 The **CAPI key** is the "Smart Card certificate" discussed in Step 9.   
 
@@ -72,9 +77,9 @@ The **CAPI key** is the "Smart Card certificate" discussed in Step 9.
      > _The Pageant window will populate with the certificate information.
      > Every time you start Pageant, you must re-add the certificate._
 
-#### Configure PuTTY
+### Configure PuTTY
 
-##### Set up a PIV login profile
+#### Set up a PIV login profile
 
   1. Right-click on the **Pageant** icon from the Windows taskbar. Select **New Session** to launch **PuTTY**.
 
@@ -87,7 +92,7 @@ The **CAPI key** is the "Smart Card certificate" discussed in Step 9.
   5. From within the **PuTTY Configuration** window, select **Connection &gt; SSH &gt; Auth**. Next, click on the checkboxes for **Allow agent forwarding** and **Allow attempted changes of username in SSH-2**.
   6. Finally, click on **Session** from the left panel and enter a name in the **Saved Session** textbox. Click on the **Save** button.
 
-##### Obtain PIV's SSH key
+#### Obtain PIV SSH key
 
   1. To get your PIV's **SSH key**, go to the **PuTTY Configuration** window. In the left panel, click on **Connection &gt; SSH&nbsp;&gt; CAPI**.  Under **Authentication Parameters**, click on  the **Browse** button.  
 
@@ -99,32 +104,34 @@ The **CAPI key** is the "Smart Card certificate" discussed in Step 9.
      > _Once the SSH server account has been set up with your SSH key, you can use your PIV to log in. 
      > For other SSH servers, submit a service ticket to the administrator and include the IP address of the SSH server you are using, your account name, and your PIV's SSH key._
 
-#### Verify your PuTTY login and proceed with SSH
+### Verify PuTTY login and proceed with SSH
 
-  1. Run **PuTTY** and select the **Saved Session**.
-  2. Click on **Load** and then on **Open**.
-  3. Enter your **remote UNIX/Linux account name**.  
-  4. At the prompt, enter your **PIV card PIN** and click on **OK** to log into the remote server.
-  5. Once logged in, run the command: **ssh-add –l** to display the SSH key.  
+1. Run **PuTTY** and select the **Saved Session**.
+2. Click on **Load** and then on **Open**.
+3. Enter your **remote UNIX/Linux account name**.  
+4. At the prompt, enter your **PIV card PIN** and click on **OK** to log into the remote server.
+5. Once logged in, run the command: **ssh-add –l** to display the SSH key.  
 
-     > _For each server you "jump" to, use **ssh-add –l** to display the SSH key. Once you see the key, you may **ssh** to any other host in the environment._
+> _For each server you "jump" to, **ssh-add –l** will display the SSH key. When you see the key, you may **ssh** to any other host in the environment._
 
 ## Use PIV for SSH from a Linux Computer
-
-### Hardware and software requirements
-
-  * A PIV
-  * A smartcard reader
-  * A Linux computer that is configured for PIV login. (For additional information, see [**configure opensc**](https://www.github.com/OpenSC/OpenSC/wiki/Download-latest-OpenSC-stable-release){:target="_blank"}.)
-
-### Procedures
 
 These steps will help you to:
 
   * Authenticate your PIV.
   * Enable you to use SSH for remote access.
 
-#### Obtain and save public key from PIV
+* [Hardware and software requirements](#hardware-and-software-requirements)
+* [Obtain and save public key from PIV](#obtain-and-save-public-key-from-PIV)
+* [Log in via SSH](#log-in-via-ssh)
+
+### Hardware and software requirements
+
+  * A PIV
+  * A smartcard reader
+  * A Linux computer that is configured for PIV login. (**FIX THIS -- to configure Linux for a PIV card reader and PIV login**, you can download and install OpenSC. Go to: [**OpenSC**](https://www.github.com/OpenSC/OpenSC/wiki/Download-latest-OpenSC-stable-release){:target="_blank"}.
+
+### Obtain and save public key from PIV
 
   1. Insert your **PIV** into your computer's smartcard reader.
   2. To save your **public SSH key** to a file, enter:
@@ -134,7 +141,7 @@ These steps will help you to:
         ```  
   3. Submit the file with your public SSH key to the SSH server administrator.
 
-#### Log in via SSH
+### Log in via SSH
 
   1. Insert your **PIV** into your computer's smartcard reader.
   2. To log into the remote server, enter:
