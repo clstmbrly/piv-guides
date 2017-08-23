@@ -1,30 +1,30 @@
 ---
 layout: default
-title: Use PIV for SSH
+title: Use PIV for SSH to a UNIX-like Server
 permalink: /userconfig/ssh
 collection: userconfig
 ---
 
-User often needs to access remote UNIX-like server through network. The risk is weak login method could be impersonated and traffic could be sniffed. PIV can provide strong authentication and hard to inpersonante; ssl can prevent network data sniffing. PIV with SSH can provide both of abov strong security measures. Public key provided in PIV is authorized in form  of certificate signed by authroized CA certificate.
-
-To use Secure Shell (SSH) for remote access to a UNIX-like server, you need to first authenticate your PIV. PIV authentication and SSH can be done from Windows, Linux, or MacOS. You will also need to configure the UNIX-like server that you want to remotely access.<!--Is the UNIX-like server statement correct?-->
-
-Select the link for your operating system (OS). Please also review _Configure a UNIX-like Server_.
-
-[Use PIV for SSH from Windows](#use-piv-for-ssh-from-windows)
-[Use PIV for SSH from Linux](#use-piv-for-ssh-from-linux)
-[Use PIV for SSH from macOS](#use-piv-for-ssh-from-macOS)
-[Configure a UNIX-like Server](#configure-a-unix-like-server)
+Administrators often need to remotely access UNIX-like servers on their networks by using Secure Shell (SSH). The biggest security risk with remote access is using a weak login method, such as common password, like the name of a sports team. Attackers often use "packet sniffing" to capture weak passwords to gain access to government systems. However, PIV cards are a strong authentication method, as well as prevent data "sniffing" by using Transport Layer Security (TLS)/Secure Sockets Layer (SSL)<!--SSL is on the way out...?-->. PIV authentication and SSH can be done from Windows, Linux, or MacOS. You will also need to configure the UNIX-like server that you want to remotely access.<!--Is the UNIX-like server statement correct?-->
   
 {% include alert-info.html heading = "Your PIV contains an authentication key pair and public certificate. Using a PIV key pair and public certificate is exactly like using a key pair and self-signed certificate for SSH remote access." %}
 
+This guide will help you to:
+
+<!--Is this the correct order for what this guide will help the admin do?-->
+1. Ensure that your OS recognizes and authenticates your PIV.
+2. Enable the correct drivers on your computer for SSH.
+3. Configure a UNIX-like server.
+3. SSH to a remote UNIX-like server.
+
+Select your operating system (OS). Please also review _Configure a UNIX-like Server_.
+
+* [Use PIV for SSH from Windows](#use-piv-for-ssh-from-windows)
+* [Use PIV for SSH from Linux](#use-piv-for-ssh-from-linux)
+* [Use PIV for SSH from macOS](#use-piv-for-ssh-from-macOS)
+* [Configure a UNIX-like Server](#configure-a-unix-like-server)
+
 ## Use PIV for SSH from Windows
-
-These steps will help you to:
-
-  * Authenticate your PIV.
-  * Ensure that your Windows computer and SSH server recognize your PIV.
-  * Enable the correct drivers on your computer for SSH.
 
 * [Hardware and software requirements](#hardware-and-software-requirements)
 * [Install PuTTY-CAC](#install-putty-cac)
@@ -46,7 +46,7 @@ These steps will help you to:
 
   1. Download and install [**PuTTY-CAC**](https://www.github.com/NoMoreFood/putty-cac/releases){:target="_blank"}_. 
   
-     > _Within the application, PuTTY-CAC is referred to simply as "**PuTTY**." 
+     > Within the application, PuTTY-CAC is referred to simply as "**PuTTY**." 
      > PuTTY will usually be installed at **C:\Program Files\PuTTY**._
      
   2. Open PuTTY and click on **About** (lower left-hand corner of the **PuTTY Configuration** window) to ensure that the correct version was installed.
@@ -114,16 +114,11 @@ The **CAPI key** is the "Smart Card certificate" discussed in Step 9.
 
 > _For each server you "jump" to, **ssh-add –l** will display the SSH key. When you see the key, you may **ssh** to any other host in the environment._
 
-## Use PIV for SSH from a Linux Computer
-
-These steps will help you to:
-
-  * Authenticate your PIV.
-  * Enable you to use SSH for remote access.
+## Use PIV for SSH from a Linux
 
 * [Hardware and software requirements](#hardware-and-software-requirements)
 * [Obtain and save public key from PIV](#obtain-and-save-public-key-from-PIV)
-* [Log in via SSH](#log-in-via-ssh)
+* [SSH to log into remote server](#SSH-to-log-into-remote-server)
 
 ### Hardware and software requirements
 
@@ -141,7 +136,7 @@ These steps will help you to:
         ```  
   3. Submit the file with your public SSH key to the SSH server administrator.
 
-### Log in via SSH
+### SSH to log into remote server
 
   1. Insert your **PIV** into your computer's smartcard reader.
   2. To log into the remote server, enter:
@@ -156,7 +151,11 @@ These steps will help you to:
 
 {% include alert-warning.html heading = "The card reader may flash. **Do not** remove the PIV until the login process has been completed." %} 
 
-## Use PIV for SSH from a Mac (macOS 10.12 Sierra) Computer
+## Use PIV for SSH from macOS (10.12 Sierra) Computer
+
+* [Hardware and software requirements](#hardware-and-software-requirements)
+* [Obtain and save public key from PIV](#obtain-and-save-public-key-from-PIV)
+* [SSH to log into remote server](#SSH-to-log-into-remote-server)
 
 ### Hardware and software requirements
 
@@ -164,14 +163,7 @@ These steps will help you to:
   * A smartcard reader
   * A Mac (macOS 10.12 Sierra) computer configured for PIV login. (For additional information, go to [**configure opensc**](https://www.github.com/OpenSC/OpenSC/wiki/Download-latest-OpenSC-stable-release){:target="_blank"}.)
 
-### Procedures
-
-These steps will help you to:
-
-  * Authenticate your PIV.
-  * Enable you to use SSH for remote access.
-
-#### Obtain and save public key from PIV card
+### Obtain and save public key from PIV
 
   1. Insert your **PIV** into your computer's smartcard reader.
   2. Use the following command to save the **user's public SSH key** to a file and submit it to SSH server administrator.
@@ -180,7 +172,7 @@ These steps will help you to:
 			ssh-keygen -D /Library/OpenSC/lib/pkcs11/opensc-pkcs11.so > mykey.pub
         ```
 
-#### Log in via SSH
+### SSH to log into remote server
 
   1. Insert your **PIV** into your computer's smartcard reader.
   2. Use the following command to log into the remote server:
@@ -197,9 +189,7 @@ These steps will help you to:
 
 ## Configure a UNIX-like Server
 
-### Procedures
-
-These steps will help you to configure a UNIX-like server for remote access.
+These steps will help you to configure a UNIX-like server for remote access. <!--Do you configure the UNIX-like, remote server once you have accessed it? Do you configure it to allow for future remote access? What are you configuring and when? Unclear.-->
 
   1. Change the configuration in the **/etc/ssh/sshd_config** file and restart the **sshd**:
 
