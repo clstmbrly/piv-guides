@@ -11,10 +11,10 @@ To use Secure Shell (SSH) for remote access to a UNIX-like server, you need to f
 
 Select the link for your operating system (OS). Please also review _Configure a UNIX-like Server_.
 
-  * [Use PIV for SSH from Windows](#use-piv-for-ssh-from-windows)
-  * [Use PIV for SSH from Linux](#use-piv-for-ssh-from-linux)
-  * [Use PIV for SSH from macOS](#use-piv-for-ssh-from-macOS)
-  * [Configure a UNIX-like Server](#configure-a-unix-like-server)
+[Use PIV for SSH from Windows](#use-piv-for-ssh-from-windows)
+[Use PIV for SSH from Linux](#use-piv-for-ssh-from-linux)
+[Use PIV for SSH from macOS](#use-piv-for-ssh-from-macOS)
+[Configure a UNIX-like Server](#configure-a-unix-like-server)
   
 {% include alert-info.html heading = "Your PIV contains an authentication key pair and public certificate. Using a PIV key pair and public certificate is exactly like using a key pair and self-signed certificate for SSH remote access." %}
 
