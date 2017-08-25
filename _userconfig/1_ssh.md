@@ -1,15 +1,19 @@
 ---
 layout: default
-title: Use PIV for SSH to a UNIX-like Server
+title: Use PIV to SSH to a UNIX-like Server
 permalink: /userconfig/ssh
 collection: userconfig
 ---
 
-Administrators often need to remotely access UNIX-like servers on their networks by using Secure Shell (SSH). The biggest security risk with remote access is using a weak login method, such as common password, like the name of a sports team. Attackers often use "packet sniffing" to capture weak passwords to gain access to government systems. However, PIV cards are a strong authentication method, as well as prevent data "sniffing" by using Transport Layer Security (TLS)/Secure Sockets Layer (SSL)<!--SSL is on the way out...?-->. PIV authentication and SSH can be done from Windows, Linux, or MacOS. You will also need to configure the UNIX-like server that you want to remotely access.<!--Is the UNIX-like server statement correct?-->
+When you use Secure Shell (SSH) to remotely access a UNIX-like server on your network, your PIV is the most secure method of authentication. Your PIV provides strong security measures (e.g., encryption) that protect your username and password from being cracked if captured through activities like malicious traffic sniffing. A PIV chip is very difficult to counterfeit, and impersonation would require the attacker to both possess your PIV and know your PIN). Clearly, a PIV protects your identity in ways that software options, which are more vulnerable to attack, cannot. 
+
+Other methods of authentication are available, such as Linux' Pluggable Authentication Modules (PAM) tied to directories.
+
+The most secure login method for SSH is to use a PIV card for authentication. PIVs provide key pairs, encyption, xxxxx, and Transport Layer Security [TLS]/Secure Sockets Layer [SSL], which prevents "packet sniffing)."<!--SSL is on the way out...?-->. 
   
 {% include alert-info.html heading = "Your PIV contains an authentication key pair and public certificate. Using a PIV key pair and public certificate is exactly like using a key pair and self-signed certificate for SSH remote access." %}
 
-This guide will help you to:
+You can SSH with your PIV from Windows, Linux, or MacOS. This guide will help you to:
 
 <!--Is this the correct order for what this guide will help the admin do?-->
 1. Ensure that your OS recognizes and authenticates your PIV.
@@ -17,14 +21,14 @@ This guide will help you to:
 3. Configure a UNIX-like server.
 3. SSH to a remote UNIX-like server.
 
-Select your operating system (OS). Please also review _Configure a UNIX-like Server_.
+Click the link for your OS-specific steps. Please also review the section, _Configure a UNIX-like Server_.
 
-* [Use PIV for SSH from Windows](#use-piv-for-ssh-from-windows)
-* [Use PIV for SSH from Linux](#use-piv-for-ssh-from-linux)
-* [Use PIV for SSH from macOS](#use-piv-for-ssh-from-macOS)
+* [Use PIV to SSH from Windows](#use-piv-to-ssh-from-windows)
+* [Use PIV to SSH from Linux](#use-piv-to-ssh-from-linux)
+* [Use PIV to SSH from macOS](#use-piv-to-ssh-from-macOS)
 * [Configure a UNIX-like Server](#configure-a-unix-like-server)
 
-## Use PIV for SSH from Windows
+## Use PIV to SSH from Windows
 
 * [Hardware and software requirements](#hardware-and-software-requirements)
 * [Install PuTTY-CAC](#install-putty-cac)
@@ -114,7 +118,7 @@ The **CAPI key** is the "Smart Card certificate" discussed in Step 9.
 
 > _For each server you "jump" to, **ssh-add –l** will display the SSH key. When you see the key, you may **ssh** to any other host in the environment._
 
-## Use PIV for SSH from a Linux
+## Use PIV to SSH from a Linux
 
 * [Hardware and software requirements](#hardware-and-software-requirements)
 * [Obtain and save public key from PIV](#obtain-and-save-public-key-from-PIV)
@@ -151,7 +155,7 @@ The **CAPI key** is the "Smart Card certificate" discussed in Step 9.
 
 {% include alert-warning.html heading = "The card reader may flash. **Do not** remove the PIV until the login process has been completed." %} 
 
-## Use PIV for SSH from macOS (10.12 Sierra) Computer
+## Use PIV to SSH from macOS (10.12 Sierra) Computer
 
 * [Hardware and software requirements](#hardware-and-software-requirements)
 * [Obtain and save public key from PIV](#obtain-and-save-public-key-from-PIV)
