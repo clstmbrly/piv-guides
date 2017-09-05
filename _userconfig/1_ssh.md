@@ -5,6 +5,8 @@ permalink: /userconfig/ssh
 collection: userconfig
 ---
 
+**Current version is in clstmbrly-Practice-Testing-Area/ssh.md**; also copied and pasted that version into the GSA/PIV/ssh branch version.
+
 When you use Secure Shell (SSH) to remotely access a UNIX-like server on your network, your PIV is the most secure method of authentication. Your PIV provides strong security measures (e.g., encryption) that protect your username and password from being cracked if captured through activities like malicious traffic sniffing. A PIV chip is very difficult to counterfeit, and impersonation would require the attacker to both possess your PIV and know your PIN). Clearly, a PIV protects your identity in ways that software options, which are more vulnerable to attack, cannot. 
 
 Other methods of authentication are available, such as Linux' Pluggable Authentication Modules (PAM) tied to directories.
