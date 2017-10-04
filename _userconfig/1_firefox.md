@@ -5,6 +5,7 @@ collection: userconfig
 permalink: userconfig/firefox/
 ---
 
+**LATEST VERSION IS AT GSA.  LACHELLE HAS PUSHED TO FEDERALIST AS OF 10/4/2017**
 <!--Even though this Playbook is under Userconfig, it looks like these procedures are intended for an Admin who is setting up a user's computer? Is this correct? Clarify who the audience is?-->
 Firefox doesn't allow for PIV login, which government employees and contractors need to access their important web applications. 
 
